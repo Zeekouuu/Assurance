@@ -86,7 +86,7 @@ useEffect((async) => {
     loadUser();
      }, []);
 const loadUser = async () => {
-    const result=await axios.get(`http://localhost:8082/api/v1/user/getUserId/${id}`) ;
+    const result=await axios.get(`back:8082/api/v1/user/getUserId/${id}`) ;
     console.log(1);
             setUserData(result.data);
             console.log(2);
@@ -144,7 +144,7 @@ const loadUser = async () => {
      console.log(birthplace);
      console.log(cin);
       // handle form submission here
-      axios.put('http://localhost:8082/api/v1/user/update',{
+      axios.put('back:8082/api/v1/user/update',{
       id_user: userData.id_user,
       immatriculation:  userData.immatriculation,
       nom : name,

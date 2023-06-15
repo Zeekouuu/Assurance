@@ -35,7 +35,7 @@ describe('Axios working', () => {
       email: 'johndoe@example.com',
       changepass: 'TRUE'
     };
-    mockAxios.onPost('http://localhost:8082/api/v1/user/SignIn').reply(200, user);
+    mockAxios.onPost('back:8082/api/v1/user/SignIn').reply(200, user);
 
     /*render(<MemoryRouter>
       <Login onSubmit={onSubmit}/>
@@ -52,7 +52,7 @@ describe('Axios working', () => {
 });
 
 it('Axios working with wrong data', async () => {
-  mockAxios.onPost('http://localhost:8082/api/v1/user/SignIn').reply(401);
+  mockAxios.onPost('back:8082/api/v1/user/SignIn').reply(401);
 
   /* render(<MemoryRouter>
      <Login onSubmit={onSubmit}/>

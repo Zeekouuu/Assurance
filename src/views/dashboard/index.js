@@ -45,11 +45,11 @@ const Index = () => {
   const fetchData = async () => {
     try {
       const [responseAcc, responseRef, responseDossiers, responseAdhs, responseAgents] = await Promise.all([
-        axios.get("http://localhost:8082/dossier_etat_acc"),
-        axios.get("http://localhost:8082/dossier_etat_ref"),
-        axios.get("http://localhost:8082/getDossiers"),
-        axios.get("http://localhost:8082/api/v1/user/getAllUserAd"),
-        axios.get("http://localhost:8082/api/v1/user/getAllUserAg"),
+        axios.get("back:8082/dossier_etat_acc"),
+        axios.get("back:8082/dossier_etat_ref"),
+        axios.get("back:8082/getDossiers"),
+        axios.get("back:8082/api/v1/user/getAllUserAd"),
+        axios.get("back:8082/api/v1/user/getAllUserAg"),
       ]);
 
       setDossiersAcceptes(responseAcc.data);

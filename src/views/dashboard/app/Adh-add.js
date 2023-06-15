@@ -114,7 +114,7 @@ const UserAdd = () => {
      console.log(birthplace);
      console.log(cin);
       // handle form submission here
-      axios.post('http://localhost:8082/api/v1/user/sa',{
+      axios.post('back:8082/api/v1/user/sa',{
       nom : name,
       prenom : lname,
       cin : cin,

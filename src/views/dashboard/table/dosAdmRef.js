@@ -16,7 +16,7 @@ const BootstrapTable = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8082/dossier_etat_ref");
+      const response = await axios.get("back:8082/dossier_etat_ref");
       setDossiers(response.data);
     } catch (error) {
       console.log(error);

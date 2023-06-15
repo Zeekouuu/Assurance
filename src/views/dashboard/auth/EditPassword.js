@@ -34,7 +34,7 @@ const EditPassword = () => {
       } else {
          let user = JSON.parse(localStorage.getItem("user"));
          console.log(user.login);
-         axios.put('http://localhost:8082/SignIn/UpdatePasswd', {
+         axios.put('back:8082/SignIn/UpdatePasswd', {
             "login": user.login,
             "newpasswd": password
          })

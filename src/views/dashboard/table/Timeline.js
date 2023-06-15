@@ -12,7 +12,7 @@ const Timeline = () => {
     // Fonction pour récupérer les détails du dossier
     const fetchDossierDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8082/dossier_etat_details?ndoss=${ndoss}`);
+        const response = await axios.get(`back:8082/dossier_etat_details?ndoss=${ndoss}`);
         setDossierDetails(response.data);
       } catch (error) {
         console.error(error);
