@@ -10,7 +10,7 @@ const BootstrapTable = () => {
   useEffect(() => {
     const fetchDossiers = async () => {
       try {
-        const response = await axios.get("back:8082/getDossiers");
+        const response = await axios.get("http://lhost.docker.internal:8082/getDossiers");
         setDossiers(response.data);
       } catch (error) {
         console.error(error);
