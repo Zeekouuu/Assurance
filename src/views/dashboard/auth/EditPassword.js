@@ -34,7 +34,7 @@ const EditPassword = () => {
       } else {
          let user = JSON.parse(localStorage.getItem("user"));
          console.log(user.login);
-         axios.put('http://host.docker.internal:8082/SignIn/UpdatePasswd', {
+         axios.put('10.5.100.187:8082/SignIn/UpdatePasswd', {
             "login": user.login,
             "newpasswd": password
          })

@@ -8,14 +8,14 @@ const UserList = () => {
    const [users, setUsers] = useState([]);
    const [searchValue, setSearchValue] = useState('');
    useEffect(() => {
-      fetch('http://host.docker.internal:8082/api/v1/user/getAllUserAd')
+      fetch('10.5.100.187:8082/api/v1/user/getAllUserAd')
          .then(response => response.json())
          .then(data => setUsers(data))
          .catch(error => console.error(error));
    }, []);
    const handleDeleteUser = () => {
       console.log(userToDelete);
-      axios.delete('http://host.docker.internal:8082/api/v1/user/delete/' +userToDelete)
+      axios.delete('10.5.100.187:8082/api/v1/user/delete/' +userToDelete)
          .then(() => {
             console.log("done");
             setUserToDelete(null);

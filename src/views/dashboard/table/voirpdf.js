@@ -21,15 +21,15 @@ const PDFViewer = () => {
     const fetchPDFs = async () => {
       try {
         const pdfPromises = [
-          axios.get('http://host.docker.internal:8082/getFichier', {
+          axios.get('10.5.100.187:8082/getFichier', {
             params: { num, num2, type: 'facture' },
             responseType: 'arraybuffer',
           }),
-          axios.get('http://host.docker.internal:8082/getFichier', {
+          axios.get('10.5.100.187:8082/getFichier', {
             params: { num, num2, type: 'ordonnance' },
             responseType: 'arraybuffer',
           }),
-          axios.get('http://host.docker.internal:8082/getFichier', {
+          axios.get('10.5.100.187:8082/getFichier', {
             params: { num, num2, type: 'feuille-de-soin' },
             responseType: 'arraybuffer',
           }),
@@ -61,7 +61,7 @@ const PDFViewer = () => {
 
   const handleSendRejectionReason = async () => {
     try {
-      await axios.put('http://host.docker.internal:8082/refuser', null, {
+      await axios.put('10.5.100.187:8082/refuser', null, {
         params: {
           ndoss: num2,
           msg: rejectionReason,
@@ -94,7 +94,7 @@ const PDFViewer = () => {
 
   const handleSendAccept = async () => {
     try {
-      await axios.put('http://host.docker.internal:8082/accepter', null, {
+      await axios.put('10.5.100.187:8082/accepter', null, {
         params: {
           ndoss: num2,
           total: amount,

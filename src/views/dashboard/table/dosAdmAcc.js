@@ -16,7 +16,7 @@ const BootstrapTable = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://host.docker.internal:8082/dossier_etat_acc");
+      const response = await axios.get("10.5.100.187:8082/dossier_etat_acc");
       setDossiers(response.data);
     } catch (error) {
       console.log(error);
