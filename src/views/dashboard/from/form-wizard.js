@@ -42,7 +42,7 @@ const FormWizard = () => {
         formData.append('feuille-de-soin', feuilleDeSoin);
         formData.append('autre-document', autreDocument);
         try {
-            const response = axios.post('10.5.100.187:8082/addDossier', formData, {
+            const response = axios.post('http://10.5.100.187:8082/addDossier', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

@@ -17,7 +17,7 @@ const BootstrapTable = () => {
     console.log(agentImm);
     const fetchDossiers = async () => {
       try {
-        const response = await axios.get("10.5.100.187:8082/dossier_adh?adhImm="+agentImm);
+        const response = await axios.get("http://10.5.100.187:8082/dossier_adh?adhImm="+agentImm);
      
         setDossiers(response.data);
        // console.log(response.data);

@@ -32,7 +32,7 @@ const UserProfile = () => {
    useEffect(() => {
       let a=JSON.parse(localStorage.getItem("user")).login;
       console.log(a);
-      fetch(`10.5.100.187:8082/api/v1/user/getUserByImm/${a}`)
+      fetch(`http://10.5.100.187:8082/api/v1/user/getUserByImm/${a}`)
          .then(response => response.json())
          .then(data => setUser(data))
          .catch(error => console.error(error));
