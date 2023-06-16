@@ -45,11 +45,11 @@ const Index = () => {
   const fetchData = async () => {
     try {
       const [responseAcc, responseRef, responseDossiers, responseAdhs, responseAgents] = await Promise.all([
-        axios.get("http://lhost.docker.internal:8082/dossier_etat_acc"),
-        axios.get("http://lhost.docker.internal:8082/dossier_etat_ref"),
-        axios.get("http://lhost.docker.internal:8082/getDossiers"),
-        axios.get("http://lhost.docker.internal:8082/api/v1/user/getAllUserAd"),
-        axios.get("http://lhost.docker.internal:8082/api/v1/user/getAllUserAg"),
+        axios.get("http://host.docker.internal:8082/dossier_etat_acc"),
+        axios.get("http://host.docker.internal:8082/dossier_etat_ref"),
+        axios.get("http://host.docker.internal:8082/getDossiers"),
+        axios.get("http://host.docker.internal:8082/api/v1/user/getAllUserAd"),
+        axios.get("http://host.docker.internal:8082/api/v1/user/getAllUserAg"),
       ]);
 
       setDossiersAcceptes(responseAcc.data);

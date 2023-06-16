@@ -17,7 +17,7 @@ const SignIn = () => {
    const handleSubmit = (event) => {
       event.preventDefault();
       // Requête HTTP pour vérifier les identifiants de l'utilisateur
-      axios.post('http://lhost.docker.internal:8082/SignIn', {
+      axios.post('http://host.docker.internal:8082/SignIn', {
          login: login,
          passwd: password,
       })

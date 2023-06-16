@@ -75,7 +75,7 @@ useEffect(() => {
     loadUser();
      }, []);
 const loadUser = async () => {
-    const result=await axios.get(`http://lhost.docker.internal:8082/api/v1/user/getUserId/${id}`) ;
+    const result=await axios.get(`http://host.docker.internal:8082/api/v1/user/getUserId/${id}`) ;
             setUserData(result.data);
             setBirthplace(userData.lieu_de_naissance);
             setName(userData.nom);
@@ -132,7 +132,7 @@ const loadUser = async () => {
      console.log(birthplace);
      console.log(cin);
       // handle form submission here
-      axios.put('http://lhost.docker.internal:8082/api/v1/user/update',{
+      axios.put('http://host.docker.internal:8082/api/v1/user/update',{
       id_user: userData.id_user,
       immatriculation:  userData.immatriculation,
       nom : name,

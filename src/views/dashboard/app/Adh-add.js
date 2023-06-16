@@ -114,7 +114,7 @@ const UserAdd = () => {
      console.log(birthplace);
      console.log(cin);
       // handle form submission here
-      axios.post('http://lhost.docker.internal:8082/api/v1/user/sa',{
+      axios.post('http://host.docker.internal:8082/api/v1/user/sa',{
       nom : name,
       prenom : lname,
       cin : cin,
