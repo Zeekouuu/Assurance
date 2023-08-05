@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_USERNAME: $DOCKER_USERNAME
+  DOCKER_PASSWORD: $DOCKER_PASSWORD
+build:
+  stage: build
+ 
+  script:
+    - mvn clean package
+    - mvn package
+
+test:
+  stage: test
+  script:
+    - mvn test
+
+deploy:
+  stage: deploy
+#   image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - mvn package
+ 
+  script:
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker build -t back-assu:latest .
+    - docker tag back-assu:latest zakibouarga/back-assu:latest
+    - docker push zakibouarga/back-assu:latest
